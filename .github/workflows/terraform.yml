@@ -28,5 +28,5 @@ jobs:
     - name: Terraform Plan
       id: plan
       # if: github.event_name == 'pull_request'
-      run: terraform plan -var-file= -input=false
+      run: terraform plan -var-file=./environments/dev.tfvars -input=false
       continue-on-error: true
