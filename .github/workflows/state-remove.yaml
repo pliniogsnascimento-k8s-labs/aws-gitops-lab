@@ -18,5 +18,5 @@ jobs:
   plan:
     runs-on: ubuntu-latest
     steps:
-      - name: Issue Forms Body Parser
+      - name: Echo inputs
         run: echo "${{ inputs.resource }}" in "${{ inputs.env }}"
