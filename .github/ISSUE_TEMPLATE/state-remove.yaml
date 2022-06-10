@@ -9,9 +9,13 @@ body:
     label: Terraform resource
     description: Terraform resource name that should be removed
     placeholder: ex. resource.helm_release.metrics-server
+  validations:
+    required: true
 - type: input
   id: env
   attributes:
     label: Environment
     description: Environment that it should be applied to.
     placeholder: ex. dev|hom|prod
+  validations:
+    required: true
