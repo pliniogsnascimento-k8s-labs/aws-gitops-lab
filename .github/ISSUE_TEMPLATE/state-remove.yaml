@@ -1,0 +1,17 @@
+name: State removal
+description: Remove a resource from terraform state file
+title: "[State removal]"
+labels: ["tfstate", "maintenance"]
+body:
+- type: input
+  id: resource
+  attributes:
+    label: Terraform resource
+    description: Terraform resource name that should be removed
+    placeholder: ex. resource.helm_release.metrics-server
+- type: input
+  id: env
+  attributes:
+    label: Environment
+    description: Environment that it should be applied to.
+    placeholder: ex. dev|hom|prod
