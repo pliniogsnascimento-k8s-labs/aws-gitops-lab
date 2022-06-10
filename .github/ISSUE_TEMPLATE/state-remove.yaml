@@ -7,7 +7,7 @@ body:
   id: resource
   attributes:
     label: Terraform resource
-    description: Terraform resource name that should be removed
+    description: Terraform resource name that should be removed from state file
     placeholder: ex. resource.helm_release.metrics-server
   validations:
     required: true
