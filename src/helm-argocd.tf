@@ -1,12 +1,12 @@
-resource "kubernetes_namespace" "argocd" {
-  metadata {
-    name = "argocd"
+# resource "kubernetes_namespace" "argocd" {
+#   metadata {
+#     name = "argocd"
 
-    labels = {
-      "app" = "argocd"
-    }
-  }
-}
+#     labels = {
+#       "app" = "argocd"
+#     }
+#   }
+# }
 
 resource "helm_release" "argocd" {
   name = "argo-cd"
