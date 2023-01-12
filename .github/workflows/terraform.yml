@@ -40,7 +40,7 @@ jobs:
     - name: Terraform Plan
       id: plan
       run: |
-        terraform plan -var-file=./environments/dev.tfvars -input=false \ 
+        terraform plan -var-file=./environments/dev.tfvars -input=false \
           -backend-config="bucket=${{ secrets.AWS_TF_BUCKET_NAME }}" \
           -backend-config="key=${{ secrets.AWS_TF_BUCKET_KEY }}" \
           -backend-config="region=us-east-1"
