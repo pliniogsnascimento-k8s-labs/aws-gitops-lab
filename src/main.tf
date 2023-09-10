@@ -1,5 +1,5 @@
 terraform {
-  backend "s3" {}
+  # backend "s3" {}
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -17,8 +17,8 @@ provider "kubernetes" {
   host                   = aws_eks_cluster.gitops_eks.endpoint
   cluster_ca_certificate = base64decode(aws_eks_cluster.gitops_eks.certificate_authority[0].data)
   exec {
-    api_version = "client.authentication.k8s.io/v1alpha1"
-    args        = ["eks", "get-token", "--cluster-name", var.cluster_name]
+    api_version = "client.authentication.k8s.io/v1beta1"
+    args        = ["eks", "get-token", "--cluster-name", var.cluster_name, "--output", "json"]
     command     = "aws"
   }
 }
@@ -28,8 +28,8 @@ provider "helm" {
     host                   = aws_eks_cluster.gitops_eks.endpoint
     cluster_ca_certificate = base64decode(aws_eks_cluster.gitops_eks.certificate_authority[0].data)
     exec {
-      api_version = "client.authentication.k8s.io/v1alpha1"
-      args        = ["eks", "get-token", "--cluster-name", var.cluster_name]
+      api_version = "client.authentication.k8s.io/v1beta1"
+      args        = ["eks", "get-token", "--cluster-name", var.cluster_name, "--output", "json"]
       command     = "aws"
     }
   }

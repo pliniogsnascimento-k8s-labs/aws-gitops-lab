@@ -1,7 +1,7 @@
 resource "aws_eks_cluster" "gitops_eks" {
   name     = var.cluster_name
   role_arn = aws_iam_role.eks-cluster-role.arn
-  version  = "1.22"
+  version  = "1.27"
 
   tags = {
     Name = var.cluster_name
