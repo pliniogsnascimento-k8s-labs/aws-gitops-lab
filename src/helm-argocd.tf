@@ -12,6 +12,7 @@ resource "helm_release" "argocd" {
 }
 
 resource "helm_release" "argo-apps" {
+  count            = var.enable_argocd ? 1 : 0
   name             = "argo-apps"
   chart            = "./charts/argocd-apps"
   namespace        = "argocd"
